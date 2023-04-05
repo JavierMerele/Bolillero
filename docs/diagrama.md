@@ -1,5 +1,4 @@
-
-
+```mermaid
 classDiagram
 
 class Bolillero{
@@ -7,16 +6,17 @@ class Bolillero{
 }
 
 
-class AlAzar{
+class IAzar{
     <<interface>>
     +numeros: int
 }
 
 
-class Random{
+class Azar{
 
 }
 
-class Random <|-- class AlAzar
+class Azar <|-- class AlAzar
+```
 
 
