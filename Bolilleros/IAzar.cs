@@ -2,8 +2,8 @@ namespace Bolilleros
 {
     public interface IAzar
     {
-        public void SacarBolilla(List <int> BolillasAdentro);
+        public int SacarBolilla(List<int> BolillasAdentro);
     }
-    
-    
+
+
 }

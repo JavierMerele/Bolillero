@@ -4,9 +4,9 @@ public class Bolillero
 
 {
     public int Numeros { get; set; }
-    public List <int> BolillasAdentro { get; set; }
-    public List <int> BolillasSacada { get; set; }
-    public List <int> Jugadas { get; set; }
+    public List<int> BolillasAdentro { get; set; }
+    public List<int> BolillasSacada { get; set; }
+    public List<int> Jugadas { get; set; }
     public IAzar Azar { get; protected set; }
 
     public Bolillero()
@@ -17,13 +17,13 @@ public class Bolillero
         this.Jugadas = new List<int>();
     }
 
-
-    public void SacarBolilla()
+    public int SacarBolilla()
     {
-        Azar.SacarBolilla(BolillasAdentro);
+        var bolilla = Azar.SacarBolilla(BolillasAdentro);
+        BolillasAdentro.Remove(bolilla);
+        BolillasSacada.Add(bolilla);
+        return bolilla;
     }
-
-
 
 
 }
