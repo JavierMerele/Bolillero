@@ -8,6 +8,7 @@ class Bolillero{
     +Jugadas: List ~int~
     +
     +SacarBolilla(List~int~)
+    +SacarIndice(List~int~)
 
 
 }
@@ -24,6 +25,6 @@ class AzarRandom{
 }
 
  AzarRandom ..|>  IAzar
- Bolillero --> IAzar
+ Bolillero --> IAzar 
 ```
 

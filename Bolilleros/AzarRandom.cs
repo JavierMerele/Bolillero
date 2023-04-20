@@ -8,4 +8,7 @@ public class AzarRandom : IAzar
     public int SacarBolilla(List<int> numeros)
         => _random.Next(numeros.Count);
 
+    public int SacarIndice(List<int> BolillasAdentro)
+        => _random.Next(0, BolillasAdentro.Count);
+
 }

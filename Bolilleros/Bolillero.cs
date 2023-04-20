@@ -9,7 +9,7 @@ public class Bolillero
     public List<int> Jugadas { get; set; }
     public IAzar Azar { get; protected set; }
 
-    public Bolillero()
+    public Bolillero(int numero, List<int> bolillasAdentro, List<int> bolillasSacadas, List<int> jugadas)
     {
         this.Numeros = Numeros;
         this.BolillasAdentro = new List<int>();
@@ -24,6 +24,10 @@ public class Bolillero
         BolillasSacada.Add(bolilla);
         return bolilla;
     }
-
-
+    public int SacarIndice()
+    {
+        var indice = Azar.SacarIndice(this.BolillasAdentro);
+        var Numeros = BolillasAdentro[indice];
+        return indice;
+    }
 }
