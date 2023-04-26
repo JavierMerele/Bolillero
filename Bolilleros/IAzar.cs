@@ -5,6 +5,4 @@ namespace Bolilleros
         public int SacarBolilla(List<int> BolillasAdentro);
         public int SacarIndice(List<int> BolillasAdentro);
     }
-
-
 }

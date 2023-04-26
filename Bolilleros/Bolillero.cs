@@ -9,13 +9,21 @@ public class Bolillero
     public List<int> Jugadas { get; set; }
     public IAzar Azar { get; protected set; }
 
-    public Bolillero(int numero, List<int> bolillasAdentro, List<int> bolillasSacadas, List<int> jugadas)
+    public Bolillero(int numeros, IAzar azar)
     {
-        this.Numeros = Numeros;
+        this.Numeros = numeros;
         this.BolillasAdentro = new List<int>();
         this.BolillasSacada = new List<int>();
         this.Jugadas = new List<int>();
+        this.Azar = azar;
+        CrearBolillas(numeros);
     }
+    private void CrearBolillas(int numeros)
+        {
+            for (int i = 0; i <= Numeros; i++)
+            BolillasAdentro.Add(i);
+        }
+
 
     public int SacarBolilla()
     {
