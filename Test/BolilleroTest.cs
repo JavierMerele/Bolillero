@@ -5,12 +5,17 @@ namespace Test;
 public class BolilleroTest
 
 {
-    public BolilleroTest Bolillero1 {get; set;}
-    public BolilleroTest()=> Bolillero1 = new Bolillero(2, Azar);
-
-    [Fact]
-    public void Constructor()
+    public Bolillero bolillero1 { get; protected set; }
+    public BolilleroTest() => bolillero1 = new Bolillero(10, new AzarPrimero);
+    public void SacarBolillaTest()
     {
-        Assert.Equal(new List<int>{0,1,2,3,4,5,6,7,8,9},Bolillero1.BolillasAdentro);
+        var numero = bolillero1.SacarBolillas();
+        var esperado = 0;
+        var esperado1 = 9;
+        var esperado2 = 1;
+
+        Assert.Equal(numero, esperado);
+        Assert.Equal(esperado1, bolillero1.BolillasAdentro.Count);
+        Assert.Equal(esperado2, bolillero1.BolillasSacada.Count);
     }
 }
