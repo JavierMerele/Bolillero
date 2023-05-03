@@ -20,16 +20,16 @@ public class Bolillero
     }
     private void CrearBolillas(int numeros)
     {
-        for (int i = 0; i <= Numeros; i++)
+        for (int i = 0; i < Numeros; i++)
             BolillasAdentro.Add(i);
     }
 
     public bool Jugar(List<int> Jugadas)
     {
 
-        for (int i = 0; i <= Jugadas.Count; i++)
+        for (int i = 0; i < Jugadas.Count; i++)
         {
-            var bolillaRandom = SacarBolillas();
+            var bolillaRandom = SacarBolilla();
             if (bolillaRandom != Jugadas[i])
                 return false;
 
@@ -51,7 +51,7 @@ public class Bolillero
     }
 
 
-    public int SacarBolillas()
+    public int SacarBolilla()
     {
         var indice = Azar.SacarIndice(this.BolillasAdentro);
         var bolilla = BolillasAdentro[indice];
@@ -59,6 +59,12 @@ public class Bolillero
         BolillasAdentro.Remove(bolilla);
         BolillasSacada.Add(bolilla);
         return bolilla;
+    }
+
+    public void ReingresarBolillas()
+    {
+        BolillasAdentro.AddRange(BolillasSacada);
+        BolillasSacada.Clear();
     }
 
 }

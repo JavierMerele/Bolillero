@@ -13,28 +13,32 @@ public class BolilleroTest
     [Fact]
     public void SacarBolillaTest()
     {
-        var numero = Bolillero1.SacarBolillas();
-        var bolilla = 0;
-        var bolilla1 = 9;
-        var bolilla2 = 1;
+        var numero = Bolillero1.SacarBolilla();
+        var cantidad = 0;
 
-        Assert.Equal(numero, bolilla);
-        Assert.Equal(bolilla1, Bolillero1.BolillasAdentro.Count);
-        Assert.Equal(bolilla2, Bolillero1.BolillasSacada.Count);
+        Assert.Equal(numero, cantidad);
+        var cantidadAdentro = Bolillero1.BolillasAdentro.Count;
+        Assert.Equal(9, cantidadAdentro);
+        var cantidadAfuera = Bolillero1.BolillasSacada.Count;
+        Assert.Equal(1, cantidadAfuera);
     }
+
+
 
 
     [Fact]
     public void ReingresarBolillaTest()
     {
-        Bolillero1.SacarBolillas();
-        Bolillero1.SacarBolillas();
-        var esperado = 10;
-        var esperado1 = 0;
+        Bolillero1.SacarBolilla();
+        Bolillero1.ReingresarBolillas();
+        var bolilla = 10;
+        var bolilla1 = 0;
 
-        Assert.Equal(esperado, Bolillero1.BolillasAdentro.Count);
-        Assert.Equal(esperado1, Bolillero1.BolillasSacada.Count);
+        Assert.Equal(bolilla, Bolillero1.BolillasAdentro.Count);
+        Assert.Equal(bolilla1, Bolillero1.BolillasSacada.Count);
     }
+
+
 
 
     [Fact]
@@ -56,7 +60,6 @@ public class BolilleroTest
 
         Assert.False(intentoPierde);
     }
-
 
 
 
