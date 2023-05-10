@@ -18,6 +18,7 @@ public class Bolillero
         this.Azar = azar;
         CrearBolillas(numeros);
     }
+
     private void CrearBolillas(int numeros)
     {
         for (int i = 0; i < Numeros; i++)
@@ -66,5 +67,8 @@ public class Bolillero
         BolillasAdentro.AddRange(BolillasSacada);
         BolillasSacada.Clear();
     }
+
+
+
 
 }

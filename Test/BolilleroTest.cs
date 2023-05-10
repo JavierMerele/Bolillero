@@ -72,6 +72,4 @@ public class BolilleroTest
         Assert.Equal(1, jugada);
     }
 
-
-
 }
