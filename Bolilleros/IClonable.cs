@@ -2,7 +2,7 @@
 namespace Bolilleros
 
 {
-    public interface IConable
+    public interface IClonable
     {
 
 
