@@ -1,6 +1,6 @@
 namespace Bolilleros;
 
-public class Bolillero
+public class Bolillero : IClonable
 
 {
     public int Numeros { get; set; }
