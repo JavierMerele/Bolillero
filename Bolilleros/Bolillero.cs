@@ -19,6 +19,18 @@ public class Bolillero
         CrearBolillas(numeros);
     }
 
+    private Bolillero(Bolillero original)
+    {
+        BolillasAdentro = new List<int>(original.BolillasAdentro);
+        BolillasSacada = new List<int>(original.BolillasSacada);
+        Azar = original.Azar;
+    }
+
+
+    public Bolillero clonar()
+        => new Bolillero(this);
+
+
     private void CrearBolillas(int numeros)
     {
         for (int i = 0; i < Numeros; i++)
