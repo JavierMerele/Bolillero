@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Bolilleros
+namespace Bolilleros;
+
+public class simulaciones
+
 {
-    public class Simulacion
+    public static long simularSinHilos (Bolillero bolillero1, List<int> jugadas, int simulaciones)
     {
+        bolillero1.JugarNveces(jugadas, simulaciones);
+    }   
 
-    }
-
-    public void simularSinHilos();
-
-    static void Main(string[] args)
-    {
-        Task<long> tarea = Task<long>.Run(() => SumaAleatoria());
-        tarea.Wait();
-        Console.WriteLine(tarea.Result)
-    }
 }

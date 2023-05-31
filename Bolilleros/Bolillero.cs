@@ -27,12 +27,13 @@ public class Bolillero
     public Bolillero clonar()
         => new Bolillero(this);
 
-
     private void CrearBolillas(int numeros)
     {
         for (int i = 0; i < Numeros; i++)
             BolillasAdentro.Add(i);
     }
+
+
 
     public bool Jugar(List<int> Jugadas)
     {
