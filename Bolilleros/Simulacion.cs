@@ -5,12 +5,17 @@ using System.Threading.Tasks;
 
 namespace Bolilleros;
 
-public class simulaciones
+public class Simulacion
 
 {
-    public static long simularSinHilos (Bolillero bolillero1, List<int> jugadas, int simulaciones)
+    public long simularSinHilos(Bolillero original, List<int> jugadas, int cantidad)
     {
-        bolillero1.JugarNveces(jugadas, simulaciones);
-    }   
+        original.JugarNveces(jugadas, cantidad);
+    }
 
+    public long simularConHilos(Bolillero original, List<int> jugadas, int cantidad, int cantidadHilos);
+    {
+        Task<long> cantidad = new Task<long>.(cantidadHilos)
+    }
+    
 }
