@@ -9,13 +9,17 @@ public class Simulacion
 
 {
     public long simularSinHilos(Bolillero original, List<int> jugadas, int cantidad)
-    {
-        original.JugarNveces(jugadas, cantidad);
-    }
+        => original.JugarNveces(jugadas, cantidad);
 
     public long simularConHilos(Bolillero original, List<int> jugadas, int cantidad, int cantidadHilos);
     {
-        Task<long> cantidad = new Task<long>.(cantidadHilos)
+        Task<long> cantidad = new Task<long>.(cantidadHilos);
+        {
+            for (int i = 0; i<cantidad; i++ )
+            {
+                bolilla = original.clonar();
+            }
+        }
     }
     
 }
