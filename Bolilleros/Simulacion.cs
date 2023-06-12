@@ -8,18 +8,23 @@ namespace Bolilleros;
 public class Simulacion
 
 {
-    public long simularSinHilos(Bolillero original, List<int> jugadas, int cantidad)
-        => original.JugarNveces(jugadas, cantidad);
+    public long simularSinHilos(Bolillero original, List<int> jugadas, int cantidadSimulaciones)
+        => original.JugarNveces(jugadas, cantidadSimulaciones);
 
-    public long simularConHilos(Bolillero original, List<int> jugadas, int cantidad, int cantidadHilos);
+    public long simularConHilos(Bolillero original, List<int> jugadas, int cantidadSimulaciones, int cantidadHilos)
     {
-        Task<long> cantidad = new Task<long>.(cantidadHilos);
+        Task<long>[] hilos = new Task<long>[cantidadHilos];
+        var tarea = cantidadSimulaciones / cantidadHilos;
+
+        for (int i = 0; i < cantidadHilos; i++)
         {
-            for (int i = 0; i<cantidad; i++ )
-            {
-                bolilla = original.clonar();
-            }
+            var bolillero = original.clonar();
+            hilos[i] = Task<long>.Run(() => (long)bolillero.JugarNveces(jugadas, tarea));
         }
+
+
     }
-    
+
+
+
 }
