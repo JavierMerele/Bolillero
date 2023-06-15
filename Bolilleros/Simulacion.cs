@@ -21,10 +21,8 @@ public class Simulacion
             var bolillero = original.clonar();
             hilos[i] = Task<long>.Run(() => (long)bolillero.JugarNveces(jugadas, tarea));
         }
-
-
+        Task<long>.WaitAll(hilos);
+        return hilos.Sum(s => s.Result);
     }
-
-
 
 }
