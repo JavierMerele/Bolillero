@@ -1,4 +1,5 @@
 using Bolilleros;
+using Xunit;
 
 namespace Bolilleros.Test;
 
@@ -16,18 +17,18 @@ public class SimulacionTest
     public void SimularSinHilostest()
     {
         var copiaBolillero = BolilleroSimulacion.clonar();
-        var simulacion = SimulacionBolillero.simularSinHilos(copiaBolillero, jugadas: new List<int> { 0, 1 });
+        var simulacion = SimulacionBolillero.simularSinHilos(copiaBolillero, jugadas: new List<int> { 0, 1 }, 1);
 
         Assert.Equal(1, simulacion);
     }
 
     [Fact]
-    public void SimularConHilosTest()
+    public void SimularConHlosTest()
     {
         var cantidadHilos = 6;
         var simulaciones = 50_000_000;
         var resultado = SimulacionBolillero.simularConHilos
-            (bolillero: BolilleroSimulacion, cantidadSimulaciones: simulaciones, jugada: new List<int> { 0, 1 }, hilos: cantidadHilos);
+            (original: BolilleroSimulacion, cantidadSimulaciones: simulaciones, jugadas: new List<int> { 0, 1 }, cantidadHilos: cantidadHilos);
 
         Assert.Equal(cantidadHilos, resultado);
     }
