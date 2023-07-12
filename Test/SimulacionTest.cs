@@ -55,4 +55,7 @@ public class SimulacionTest
             (original: BolilleroSimulacion, cantidadSimulaciones: simulaciones, jugadas: new List<int> { 0, 1 }, cantidadHilos: cantidadHilos);
 
         Assert.Equal(cantidadHilos, resultado);
+    } 
+
+
 }
