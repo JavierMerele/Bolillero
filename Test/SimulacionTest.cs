@@ -13,6 +13,11 @@ public class SimulacionTest
         SimulacionBolillero = new Simulacion();
     }
 
+
+
+
+
+
     [Fact]
     public void SimularSinHilostest()
     {
@@ -21,6 +26,10 @@ public class SimulacionTest
 
         Assert.Equal(1, simulacion);
     }
+
+
+
+
 
     [Fact]
     public void SimularConHlosTest()
@@ -32,4 +41,18 @@ public class SimulacionTest
 
         Assert.Equal(cantidadHilos, resultado);
     }
+
+
+
+
+
+    [Fact]
+    public async void SimularConHilosAsync()
+    {
+        var cantidadHilos = 6;
+        var simulaciones = 50_000_000;
+        var resultado = await SimulacionBolillero.simularConHilosAsync
+            (original: BolilleroSimulacion, cantidadSimulaciones: simulaciones, jugadas: new List<int> { 0, 1 }, cantidadHilos: cantidadHilos);
+
+        Assert.Equal(cantidadHilos, resultado);
 }
